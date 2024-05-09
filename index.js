@@ -7,10 +7,15 @@
 const inquirer = require('inquirer');
 const MaxLengthInputPrompt = require('inquirer-maxlength-input-prompt');
 
+const svg = require('./lib/svg');
+
 inquirer.registerPrompt('maxlength-input', MaxLengthInputPrompt);
 
+
 function handleResponse(answers){
-    console.log(answers);
+    const svgString = svg.createSvg(answers);
+    // writeToFile(fileName, data);
+    console.log(svgString);
 }
 const questions = [
     {
