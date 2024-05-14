@@ -15,7 +15,7 @@ inquirer.registerPrompt('maxlength-input', MaxLengthInputPrompt);
 function handleResponse(answers){
     const svgString = svg.createSvg(answers);
     // writeToFile(fileName, data);
-    console.log(svgString);
+    console.log(answerss);
 }
 const questions = [
     {
