@@ -23,7 +23,7 @@ Command-line application that generates an SVG file based on user input. The app
 3. Answer the questions
 4. Once you see "Generated logo.svg" in the console, check your root folder for the logo.svg file and open it in your browser
 
-Alternatively, you can watch the walkthrough [video]() demonstrating the app's functionality.
+Alternatively, you can watch the walkthrough [video](https://drive.google.com/file/d/1hQ7u03kb2_XKqlE3S6vORFNqBADgja7f/view) demonstrating the app's functionality.
 
 Here's an example of how it should look:
 
