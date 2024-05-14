@@ -1,22 +1,22 @@
-// Prompts text (up to three characters)
-// Prompt for text color
-// Prompt for shape in a list(circle, triangle, and square)
-// Prompt for shape color
-// Create a file with the name "logo.svg" 300x200px svg image
-// Output text `Generated logo.svg`
+// Import the inquirer module
 const inquirer = require('inquirer');
+// Import the prompt module from inquirer that limits characters
 const MaxLengthInputPrompt = require('inquirer-maxlength-input-prompt');
+// Import the svg.js file
+const Svg = require('./lib/svg');
+// Import the file system module
+const fs = require('fs');
 
-const svg = require('./lib/svg');
-
+// Register the new prompt
 inquirer.registerPrompt('maxlength-input', MaxLengthInputPrompt);
 
-
+// Function that creates an Svg object and writes it into the logo.svg file
 function handleResponse(answers){
-    // const svgString = svg.createSvg(answers);
-    // writeToFile(fileName, data);
-    console.log(answers);
+    const newLogo = new Svg(answers.logoText, answers.textColor, answers.shape, answers.shapeColor);
+    fs.writeFile('logo.svg', newLogo.createSvg(), (err) =>  err ? console.error(err) : console.log('Generated logo.svg'));
 }
+
+
 const questions = [
     {
         type: 'maxlength-input',
@@ -42,4 +42,6 @@ const questions = [
     }
 ];
 
+
+// Inquirer prompt
 inquirer.prompt(questions).then(handleResponse);
